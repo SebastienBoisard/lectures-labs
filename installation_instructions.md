@@ -10,6 +10,14 @@ Download the Anaconda distribution for your Operating System
 Follow the instructions of the Anaconda page to install anaconda
 on your laptop.
 
+Create an environment for this class: 
+
+    conda create --name env_m2dsupsdlclass python=3.5
+     
+Activate this new environment:
+
+    conda activate env_m2dsupsdlclass
+
 Open a console / terminal and update the following packages with conda:
 
     conda install python=3.5 numpy scikit-learn=0.18.1 jupyter matplotlib pip
@@ -26,8 +34,10 @@ Check that you can import keras with the python from anaconda:
     Using TensorFlow backend.
     1.2.1
 
-Ideally: create a new jupyter notebook and check that you can import
-the numpy, matplotlib, tensforflow and keras modules.
+Finally, launch jupyter notebook:
+
+    IP_ADDRESS=`ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1  -d'/'`
+    jupyter notebook --ip=$IP_ADDRESS --no-browser
 
 
 # Troubleshooting 
